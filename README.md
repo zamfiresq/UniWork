@@ -1,3 +1,4 @@
 # UniWork - CS
 
-Various projects and homework for university
+Various projects and assignments completed within the faculty
+
