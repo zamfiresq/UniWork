@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/alexandrazamfirescu/FPC/output/test1'
+relocations:     []
+...
