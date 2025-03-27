@@ -1,4 +1,4 @@
 # UniWork - CS
 
-Various projects and assignments completed within the faculty
+Academic projects and assignments developed during my university studies.
 
