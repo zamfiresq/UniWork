@@ -1,0 +1,67 @@
+#Zamfirescu Alexandra
+#Vizinteanu Teodora
+#grupa141
+
+Sigma:
+goEntranceHall
+goDiningRoom
+goKitchen
+goArmoury
+goTreasury
+goLibrary
+goPantry
+goThroneRoom
+goWizard'sStudy
+goSecretExit
+End
+
+List Sigma:
+End
+
+States:
+EntranceHall, S
+DiningRoom
+Kitchen
+Armoury
+Treasury
+Library
+Pantry
+ThroneRoom
+Wizard'sStudy
+SecretExit, F
+End
+
+Transitions:
+#LA DUS
+EntranceHall,goDiningRoom,epsilon -> DiningRoom,epsilon,epsilon
+# take invitation, take chef's hat
+DiningRoom,goKitchen,chef'sHat -> Kitchen,epsilon,spoon
+DiningRoom,goTreasury,epsilon -> Treasury,epsilon,ancientCoin
+Treasury,goLibrary,ancientCoin -> Library,epsilon,spellBook
+Kitchen,goPantry,spoon -> Pantry,epsilon,epsilon
+EntranceHall,goArmoury,key -> Armoury,epsilon,sword
+Armoury,goTreasury,sword -> Treasury,epsilon,ancientCoin
+Armoury,goThroneRoom,crown -> ThroneRoom,epsilon,epsilon
+ThroneRoom,goWizard'sStudy,spellBook -> Wizard'sStudy,epsilon,magicWand
+Wizard'sStudy,goSecretExit,magicWand -> SecretExit,epsilon,epsilon
+Library,goSecretExit,magicWand -> SecretExit,epsilon,epsilon
+#LA INTORS
+SecretExit,goWizard'sStudy,spellBook -> Wizard'sStudy,epsilon,magicWand
+SecretExit,goLibrary,ancientCoin -> Library,epsilon,spellBook
+Wizard'sStudy,goThroneRoom,crown -> ThroneRoom,epsilon,epsilon
+ThroneRoom,goArmoury,key -> Armoury,epsilon,epsilon
+# take sword, take crowd
+Armoury,goEntranceHall,epsilon -> EntranceHall,epsilon,key
+Library,goTreasury,sword -> Treasury,epsilon,ancientCoin
+Wizard'sStudy,goTreasury,sword -> Treasury,epsilon,ancientCoin
+Treasury,goDining Room,epsilon -> DiningRoom,epsilon,epsilon
+# take invitation, take chef's hat
+Treasury,goArmoury,key -> Armoury,epsilon,epsilon
+# take
+DiningRoom,goEntranceHall,invitation -> EntranceHall,epsilon,key
+Pantry,goKitchen,chef'sHat -> Kitchen,epsilon,spoon
+Kitchen,goDiningRoom,epsilon -> DiningRoom,epsilon,epsilon #take
+End
+
+
+# take(currentRoom, itemName)
