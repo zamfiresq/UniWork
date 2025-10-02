@@ -2,52 +2,61 @@
 <html lang="ro">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add this meta tag for responsiveness -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> Pofta buna, multumesc </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <section>
             <div class="circle"></div>
             <header>
-                <a href="#" class="logo"><img src="imagini/logo.png" alt="descriere"></a>
-                <div class="toggle" onclick="toggleMenu()">
-                    <svg class="icon-menu" viewBox="0 0 100 80" width="30" height="30">
-                        <rect width="100" height="10"></rect>
-                        <rect y="30" width="100" height="10"></rect>
-                        <rect y="60" width="100" height="10"></rect>
-                    </svg>
-                    <svg class="icon-close" viewBox="0 0 24 24" width="30" height="30" style="display: none;">
-                        <line x1="0" y1="0" x2="24" y2="24" stroke="black" stroke-width="3"/>
-                        <line x1="24" y1="0" x2="0" y2="24" stroke="black" stroke-width="3"/>
-                    </svg>
+                <div class="header-left">
+                    <div class="toggle" onclick="toggleMenu()">
+                        <svg class="icon-menu" viewBox="0 0 100 80" width="30" height="30">
+                            <rect width="100" height="10"></rect>
+                            <rect y="30" width="100" height="10"></rect>
+                            <rect y="60" width="100" height="10"></rect>
+                        </svg>
+                        <svg class="icon-close" viewBox="0 0 24 24" width="30" height="30" style="display: none;">
+                            <line x1="0" y1="0" x2="24" y2="24" stroke="black" stroke-width="3"/>
+                            <line x1="24" y1="0" x2="0" y2="24" stroke="black" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <button class="newsletter-btn" onclick="toggleNewsletter()">
+                        <i class="fas fa-envelope"></i>
+                    </button>
                 </div>
-                <ul class="navigation">
-                    <li><a href="index.html">A c a s ă</a></li>
-                    <li><a href="about.html">D e s p r e</a></li>
-                    <li><a href="contact.html">C o n t a c t</a></li>
-                    <li><a href="recipes.html">R e ț e t e</a></li>
-                    <li><a href="cod.html">C o d</a></li>
-                </ul>
+                
+                <a href="#" class="logo"><img src="imagini/logo_transp.png" alt="Pofta Bună, Mulțumesc"></a>
+                
+                <div class="header-right">
+                    <ul class="navigation">
+                        <li><a href="index.html">A c a s ă</a></li>
+                        <li><a href="about.html">D e s p r e</a></li>
+                        <li><a href="contact.html">C o n t a c t</a></li>
+                        <li><a href="recipes.html">R e ț e t e</a></li>
+                    </ul>
+                </div>
             </header>
             
             
             <div class="content">
                 <div class="textBox">
-                    <h2>Acesta este un blog culinar pentru materia de <span>Tehnici Web</span></h2>
-                    <p style="font-family: 'Poppins', sans-serif; font-size: 16px;">Dedic acest site prietenului meu Răducu, deoarece fără ajutorul lui în alegerea numelui, nu ajungeam aici.</p>
-                    <a href="imagini/buci.JPG" style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; text-decoration: none; color: #fff;">Hai, apasă-mă!</a>
+                    <h2><b>Bine ai venit în lumea </b><span>CULINARĂ</span></h2>
+                    <p>Descoperă rețete delicioase, sfaturi culinare și inspirație pentru preparatele tale preferate. Acest blog este dedicat tuturor iubitorilor de bucătărie și gastronomie.</p>
+                    <a href="imagini/buci.JPG">Explorează rețetele</a>
                 </div>
                         <div class="imgBox">
-                            <img src="imagini/twirled-zucchini-sweet-potato-burger-with-chipotle-mayonnaise-72268-2-removebg-preview.png" class="burger">
+                            <img src="imagini/twirled-zucchini-sweet-potato-burger-with-chipotle-mayonnaise-72268-2-removebg-preview.png" class="burger" width="1200" height="1200">
                         </div>
                 </div>
                 <ul class="png">
-                    <li><img src="imagini/twirled-zucchini-sweet-potato-burger-with-chipotle-mayonnaise-72268-2-removebg-preview.png" onclick="imgSlider('imagini/twirled-zucchini-sweet-potato-burger-with-chipotle-mayonnaise-72268-2-removebg-preview.png'); changeCircleColor('#8D7B68')"></li>
-                    <li><img src="imagini/Ramen-removebg-preview.png" onclick="imgSlider('imagini/Ramen-removebg-preview.png'); changeCircleColor('#A4907C')"></li>
-                    <li><img src="imagini/20170709-untitled-6118-Edit.how_.to_.make_.paella-removebg-preview.png" onclick="imgSlider('imagini/20170709-untitled-6118-Edit.how_.to_.make_.paella-removebg-preview.png'); changeCircleColor('#C8B6A6')"></li>
-                    <li><img src="imagini/6711e0755b371d7b1dd189a7a90d3e76_2-removebg-preview.png" onclick="imgSlider('imagini/6711e0755b371d7b1dd189a7a90d3e76_2-removebg-preview.png'); changeCircleColor('#E9DAC1')"></li>
-                    <!-- mai am de adaugat poze -->
+                    <li><img src="imagini/twirled-zucchini-sweet-potato-burger-with-chipotle-mayonnaise-72268-2-removebg-preview.png"  width="1200" height="1200" onclick="imgSlider('imagini/twirled-zucchini-sweet-potato-burger-with-chipotle-mayonnaise-72268-2-removebg-preview.png'); changeCircleColor('#8D7B68')"></li>
+                    <li><img src="imagini/Ramen-removebg-preview.png"  width="1200" height="1200" onclick="imgSlider('imagini/Ramen-removebg-preview.png'); changeCircleColor('#A4907C')"></li>
+                    <li><img src="imagini/gnocchi_transp-Photoroom.png"  width="1200" height="1200" onclick="imgSlider('imagini/gnocchi_transp-Photoroom.png'); changeCircleColor('#C8B6A6')"></li>
+                    <li><img src="imagini/ratatoiulle_transp-Photoroom.png"  width="1200" height="1200" onclick="imgSlider('imagini/ratatoiulle_transp-Photoroom.png'); changeCircleColor('#E9DAC1')"></li>
+
                 </ul>
                 <ul class="smi">
                     <li><a href="#"><img src="imagini/insta-icon.png"></a></li>

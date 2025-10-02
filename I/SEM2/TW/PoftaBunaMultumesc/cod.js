@@ -1,8 +1,8 @@
 // modificarea stilului unui element sau al unui grup de elemente
-// manipularea DOM-ului (selectare după id, tag, clasă, folosind selectori CSS)
-// crearea și stergerea de elemente HTML
+// manipularea DOM-ului (selectare dupa id, tag, clasa, folosind selectori CSS)
+// crearea si stergerea de elemente HTML
 // folosirea și modificarea evenimentelor generate de mouse si tastatură
-// schimbarea aleatoare a valorilor unor proprietăți (de exemplu: culoare, dimensiuni, poziție)
+// schimbarea aleatoare a valorilor unor proprietati (de exemplu: culoare, dimensiuni, pozitie)
 
 function imgSlider(anything){
     document.querySelector('.burger').src = anything;
@@ -13,6 +13,7 @@ function changeCircleColor(color){
     circle.style.background = color;
 }
 
+// toggle menu pentru versiunile mobile / tableta
 function toggleMenu() {
     const toggle = document.querySelector('.toggle');
     const nav = document.querySelector('.navigation');
@@ -31,159 +32,33 @@ function toggleMenu() {
     }
 }
 
-
-// adaugare inputuri funcționale (de exemplu: input de tip text/range/number/radio/checkbox, select, textarea)
-
-// // //CREARE CONT
-// const regsiterForm = document.querySelector('.register-form');
-// const submitBtn = document.getElementById('submit-btn');
-// const submissionStatus = document.querySelector('.submission-status');
-
-// // valori pentru input
-// const firstName = document.getElementById('firstname'),
-//       lastName = document.getElementById('lastname'),
-//       emailAddr = document.getElementById('email'),
-//       phoneNumber = document.getElementById('phonenumber'),
-//       password = document.getElementById('password'),
-//       confirmPassword = document.getElementById('confirm-password');
-
-
-// submitBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     let isValidForm = validateInputValues();
-//     if(isValidForm){
-//         submissionStatus.classList.add('successMessage');
-//         submissionStatus.textContent = "Registration succeeded!";
-//     } else {
-//         submissionStatus.classList.add('errorMessage');
-//         submissionStatus.textContent = "Registration failed!";
-//     }
-
-//     setTimeout(() => {
-//         submissionStatus.classList.remove('errorMessage', 'successMessage');
-//     }, 1500);
-// });
-
-// function validateInputValues(){
-//     let inputValidationStatus = [];  
-//     if(validateName(firstName.value)){
-//         inputStatus(true, firstName);
-//         inputValidationStatus[0] = true;
-//     } else {
-//         inputStatus(false, firstName);
-//         inputValidationStatus[0] = false;
-//     }
-
-//     if(validateName(lastName.value)){
-//         inputStatus(true, lastName);
-//         inputValidationStatus[1] = true;
-//     } else {
-//         inputStatus(false, lastName);
-//         inputValidationStatus[1] = false;
-//     }
-
-//     if(validateEmail(emailAddr.value)){
-//         inputStatus(true, emailAddr);
-//         inputValidationStatus[2] = true;
-//     } else {
-//         inputStatus(false, emailAddr);
-//         inputValidationStatus[2] = false;
-//     }
-
-//     if(validatePhoneNo(phoneNumber.value)){
-//         inputStatus(true, phoneNumber);
-//         inputValidationStatus[3] = true;
-//     } else {
-//         inputStatus(false, phoneNumber);
-//         inputValidationStatus[3] = false;
-//     }
-
-//     if(validatePassword(password.value)){
-//         inputStatus(true, password);
-//         inputValidationStatus[4] = true;
-//     } else {
-//         inputStatus(false, password);
-//         inputValidationStatus[4] = false;
-//     }
-
-//     if(confirmPassword.value.trim() !== "" && validateConfirmPassword(password.value, confirmPassword.value)){
-//         inputStatus(true, confirmPassword);
-//         inputValidationStatus[5] = true;
-//     } else {
-//         inputStatus(false, confirmPassword);
-//         inputValidationStatus[5] = false;
-//     }
-
-//     return (inputValidationStatus.includes(false) ? false : true);
-// } 
-
-// // nume, prenume
-// function validateName(nameTxt){
-//     const nameRegex = /^[A-Za-z]+$/; // firstname or lastname containing only letters
-//     return nameRegex.test(nameTxt);
-// }
-
-// // validare mail
-// function validateEmail(emailTxt){
-//     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     return emailRegex.test(emailTxt);
-// }
-
-// //numar telefon
-// function validatePhoneNo(phoneTxt){
-//     const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-//     /* formate acceptate
-//         (123) 456-7890
-//         (123)456-7890
-//         123-456-7890
-//         123.456.7890
-//         1234567890
-//         +31636363634
-//         075-63546725
-//     */
-//    return phoneRegex.test(phoneTxt);
-// }
-
-// // validare parola
-// function validatePassword(passwordTxt){
-//     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-//     //minimum 8 caractere, cel putin o litera mare, una mica, o cifra si un caracter special
-//     return passwordRegex.test(passwordTxt);
-// }
-
-// //confirmare parola
-// function validateConfirmPassword(passwordTxt, confirmPasswordTxt){
-//     return (passwordTxt == confirmPasswordTxt);
-// }
-
-
-// //eroare sau confirmare 
-// function inputStatus(status, input){
-//     let inputGroup = input.parentElement;
-//     if(status){
-//         inputGroup.classList.add('success');
-//     } else {
-//         inputGroup.classList.add('error');
-//     }
-
-//     //folosirea setTimeout sau setInterval
-//     setTimeout(() => {
-//         inputGroup.classList.remove('success', 'error');
-//     }, 1500);
-// }
+// abonare la newsletter
+function toggleNewsletter() {
+    const email = prompt("Introduceți adresa de email pentru a vă abona la newsletter:");
+    
+    if (email) {
+        // validare simpla de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (emailRegex.test(email)) {
+            alert("Mulțumim! V-ați abonat cu succes la newsletter-ul nostru!");
+            console.log("Email abonat:", email);
+        } else {
+            alert("Vă rugăm să introduceți o adresă de email validă.");
+        }
+    }
+}
 
 
 //ca sa mearga fie validare cont/ searchbar, trebuie comentat codul pentru unul din ele
 
 //searchbar pentru retete
-
-
 const searchBtn = document.getElementById('search-btn');
 const mealList = document.getElementById('meal');
 const mealDetailsContent = document.querySelector('.meal-details-content');
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
-// event listeners
+
 searchBtn.addEventListener('click', getMealList);
 mealList.addEventListener('click', getMealRecipe);
 recipeCloseBtn.addEventListener('click', () => {
@@ -191,7 +66,7 @@ recipeCloseBtn.addEventListener('click', () => {
 });
 
 
-// get meal list that matches with the ingredients
+// lista de retete care se pot face cu ingredientele date
 function getMealList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
@@ -214,7 +89,7 @@ function getMealList(){
             });
             mealList.classList.remove('notFound');
         } else{
-            html = "Sorry, we didn't find any meal!";
+            html = "Nu am găsit nicio rețetă :(";
             mealList.classList.add('notFound');
         }
 
@@ -223,7 +98,7 @@ function getMealList(){
 }
 
 
-// get recipe of the meal
+// getter pentru reteta
 function getMealRecipe(e){
     e.preventDefault();
     if(e.target.classList.contains('recipe-btn')){
@@ -235,6 +110,7 @@ function getMealRecipe(e){
 }
 
 
+// modal pentru afisarea retetei 
 function mealRecipeModal(meal){
     console.log(meal);
     meal = meal[0];

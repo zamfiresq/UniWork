@@ -1,17 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+@font-face {
+    font-family: 'Chronicle Display';
+    src: url('fonts/Chronicle Display Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+
+.back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Chronicle Display';
     line-height: 1.5;
 }
 .contact-bg{
     height: 40vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(imagini/spices-370114_1920.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(imagini/food-aesthetics-2.jpg);
     background-position: 50% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -25,12 +39,14 @@ body{
 .contact-bg h3{
     font-size: 1.3rem;
     font-weight: 400;
+    font-family: 'Chronicle Display';
 }
 .contact-bg h2{
     font-size: 3rem;
     text-transform: uppercase;
     padding: 0.4rem 0;
     letter-spacing: 4px;
+    font-family: 'Chronicle Display';
 }
 .line div{
     margin: 0 0.2rem;
@@ -212,6 +228,10 @@ button{
 /* responsive */
 
 @media screen and (min-width: 768px){
+    .back-button{
+        top: 25px;
+        left: 25px;
+    }
     .contact-bg .text{
         width: 70%;
         margin-left: auto;
@@ -244,8 +264,6 @@ button{
 
 
 /* pentru abonare */
-
-
 @media screen and (min-width: 600px){
     .form-item-list{
         display: grid;
@@ -276,7 +294,7 @@ button{
 }
 
 .fancy-font {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Chronicle Display', serif;
     letter-spacing: 1px;
 }
 
@@ -284,6 +302,7 @@ button{
     font-weight: 300;
     font-size: 0.9rem;
     margin-top: 80px;
+
 }
 
 .contact-bg h2.fancy-font {
@@ -296,31 +315,57 @@ button{
     margin-top: -1px;
 }
 
-.back-button {
-  padding: 20px;
-  margin-bottom: 20px;
-  text-align: center;
+.btn{
+    border: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-weight: 600;
+    background: transparent;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.btn.btn-brown{
+    background: #A4907C;
+    color: #fff;
+    border-color: #A4907C;
+    transition: all 0.5s ease-in-out;
+    width: auto;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -12px;
+    
+}
+.btn.btn-brown:hover{
+    background: transparent;
+    border-color: #A4907C;
+    color: #000;
 }
 
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 10px;
-  background-color: #8D7B68;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 0.4s ease-in-out;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 2px;
-  border: 1px solid #8D7B68;
+.btn.btn-brown a{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.btn.btn-brown a i {
+    margin: 0;
+    font-size: 1.2rem;
+}
 
-.back-btn:hover {
-  background-color: #fff;
-  color: #8D7B68;
-  border-color: #8D7B68;
+.btn.btn-white{
+    transition: all 0.5s ease-in-out;
+}
+.btn.btn-white:hover{
+    background: #A4907C;
+    border-color: #A4907C;
+    color: #fff;
 }
 
 @media screen and (max-width: 991px) {
@@ -393,6 +438,13 @@ button{
 }
 
 @media screen and (max-width: 576px) {
+    .back-button{
+    top: 10px;
+    left: -10px;
+    z-index: 1100;
+    font-size: 0.5rem;
+    }
+
     section.contact-section {
         padding: 0;
     }
@@ -438,8 +490,8 @@ button{
     }
 
     .back-button {
-        padding: 10px;
-        margin-bottom: 10px;
+        padding: 7px;
+        margin-bottom: 7px;
     }
 
     .back-btn {
@@ -457,6 +509,13 @@ button{
 }
 
 @media screen and (max-width: 360px) {
+   .back-button{
+    top: 10px;
+    left: -10px;
+    z-index: 1100;
+    font-size: 0.5rem;
+    }
+    
     .contact-bg h2 {
         font-size: 1.1rem;
     }

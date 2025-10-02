@@ -1,50 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Rețete Culinare - Pofta Bună, Mulțumesc</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-  <link rel = "stylesheet" href = "style3.css">
+  <link rel="stylesheet" href="style3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="back-button">
-    <a href="index.html" class="back-btn">
-      <i class="fas fa-arrow-left"></i>
-    </a>
-  </div>
+    <div class="back-button">
+      <button type="button" class="btnn btn-brown">
+        <a href="index.html">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </button>
+    </div>
 
-  <div class = "container">
-    <div class = "meal-wrapper">
-      <div class = "meal-search">
-        <h2 class = "title">Găsește preparatele tale preferate aici!</h2>
+  <div class = "meal-wrapper">
+    <div class = "meal-search">
+      <h2 class = "title">Descoperă rețete delicioase!</h2>
+      <p style="color: #666; margin-bottom: 1.5rem; font-size: 1.1rem;">Caută rețete bazate pe ingredientele pe care le ai în casă</p>
 
-        <div class = "meal-search-box">
-          <input type = "text" class = "search-control" placeholder="Scrie ingredientul..." id = "search-input">
-          <button type = "submit" class = "search-btn btn" id = "search-btn">
-            <i class = "fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class = "meal-result">
-        <h2 class = "title">Rezultat:</h2>
-        <div id= "meal">
-         
-        </div>
-      </div>
-
-
-      <div class = "meal-details">
-        <!-- buton inchidere -->
-        <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
-          <i class = "fas fa-times"></i>
+      <div class = "meal-search-box">
+        <input type = "text" class = "search-control" id = "search-input">
+        <button type = "submit" class = "search-btn btn" id = "search-btn">
+          <i class = "fas fa-search"></i>
         </button>
+      </div>
+    </div>
 
-        <!-- content pentru preparate -->
-        <div class = "meal-details-content">
+    <div class = "meal-result">
+      <h2 class = "title">Rețete găsite:</h2>
+      <div id= "meal">
+       
+      </div>
+    </div>
 
-        </div>
+    <div class = "meal-details">
+      <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+        <i class = "fas fa-times"></i>
+      </button>
+
+      <div class = "meal-details-content">
+
       </div>
     </div>
   </div>

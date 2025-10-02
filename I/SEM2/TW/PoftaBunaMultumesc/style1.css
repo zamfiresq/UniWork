@@ -3,8 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+}
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     color: rgb(74, 74, 74);
 }
 .about-wrapper{
@@ -132,7 +139,7 @@ body{
 }
 .about-right h1 span{
     color: #A4907C;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 .about-right h2{
     font-weight: 600;
