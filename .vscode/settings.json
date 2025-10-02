@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "*.puml": "plantuml",
+        "*.rmd": "markdown",
+        "algorithm": "c",
+        "deque": "c",
+        "memory": "c",
+        "queue": "c",
+        "string": "c",
+        "type_traits": "c",
+        "__availability": "c",
+        "__config": "c",
+        "exception": "c",
+        "ios": "c",
+        "system_error": "c",
+        "cmath": "c",
+        "__locale": "c",
+        "compare": "c",
+        "array": "c",
+        "istream": "c",
+        "locale": "c",
+        "tuple": "c",
+        "variant": "c"
+    }
+}
