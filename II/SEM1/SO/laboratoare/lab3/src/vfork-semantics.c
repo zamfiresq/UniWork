@@ -12,7 +12,7 @@ int variabilaGlobala = 6;
 int main(int argc, char *argv[], char* envp[]){
     int variabilaLocala = 10;
 
-//    // apel sistem write pentru buf
+//    apel sistem write pentru buf
 //    write(STDOUT_FILENO, buf, strlen(buf)); // avem wirte, folosim fd
 //    printf("Inainte de fork\n");
 //    fflush(stdout); // golirea buffer-ului asociat cu stdout - renuntare buf

@@ -16,7 +16,7 @@ int main(int argc, char *argv[], char* envp[]){
     fflush(stdout); // golirea buffer-ului asociat cu stdout
 
     pid_t pid = fork(); // pid pentru fork
-    if (pid == -1){ // daca am pid negativ (< 0)
+    if (pid == -1){ // daca am pid negativ am eroare
         perror("EROARE FORK");
         exit(1);
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[], char* envp[]){
 }
 
 
-// Diferențele majore între rularea interactivă și
-// redirecționarea ieșirii către un fișier constau
-// în modul în care sunt afișate și ordinea exactă
-// în care mesajele sunt scrise în fișierul rezultat (out).
+// diferentele majore intre rularea interactiva si
+// redirectionarea iesirii catre un fisier constau
+// in modul in care sunt afisate si ordinea exacta
+// in care mesajele sunt scrise in fisierul rezultat (out).

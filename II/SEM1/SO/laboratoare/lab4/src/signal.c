@@ -23,7 +23,7 @@ int main(int argc, char *argv[], char *envp[]) {
     }
 
     if(pid) {
-        wait(NULL); // Așteaptă terminarea procesului copilului
+        wait(NULL); 
         printf("\nPress any key: \n"), getchar(), printf("Done\n\n");
     } else {
         //pid == 0  - procesul copil
@@ -37,10 +37,10 @@ void handler(int signal_number) {
     pid_t pid;
     int status;
 
-    printf("Caught signal %d\n", signal_number); // non-reentrant call
+    printf("Caught signal %d\n", signal_number);                // non-reentrant call
     if((pid = waitpid((pid_t)0, &status, WNOHANG)) == -1) {
-        fprintf(stderr, "SIGCHLD, but no one to wait for\n"); // fprintf, not printf
+        fprintf(stderr, "SIGCHLD, but no one to wait for\n");   // fprintf, not printf
         return;
     }
-    printf("Child %d exits with status %d\n", pid, WEXITSTATUS(status)); // non-reentrant call
+    printf("Child %d exits with status %d\n", pid, WEXITSTATUS(status)); 
 }

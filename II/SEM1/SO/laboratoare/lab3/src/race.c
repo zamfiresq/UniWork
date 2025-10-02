@@ -4,7 +4,7 @@
 #include <string.h>
 
 
-// functie myprint
+// functie de afisare caracter cu caracter
 void myprint(char *str) {
     char c;
 

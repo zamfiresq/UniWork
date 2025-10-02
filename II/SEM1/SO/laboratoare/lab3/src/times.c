@@ -4,8 +4,7 @@
 #include <sys/times.h>
 #include <sys/wait.h>
 
-
-void runProgram (char *program, char *args[]) {
+void runProgram(char *program, char *args[]) {
     pid_t pid = fork();
     if (pid < 0) {
         perror("EROARE FORK");
@@ -13,20 +12,19 @@ void runProgram (char *program, char *args[]) {
     }
 
     if (pid == 0) {
-        // Proces copil
+        // proces copil
         execvp(program, args);
         perror("EROARE EXECLP");
         exit(1);
     } else {
-        // Proces părinte
+        // proces parinte
         int status;
         waitpid(pid, &status, 0);
     }
 }
 
-int main(int argc, char *argv[], char* envp[]) {
+int main(int argc, char *argv[], char *envp[]) {
 
-    // in cazul in care nu avem argumente in linia de comanda
     if (argc < 2) {
         printf("EROARE: NU EXISTA ARGUMENTE\n");
         exit(1);
@@ -35,15 +33,19 @@ int main(int argc, char *argv[], char* envp[]) {
     struct tms start, end;
     clock_t start_real, end_real;
 
+    long clk_tck = sysconf(_SC_CLK_TCK); // ticks pe secunda
+
     start_real = times(&start);
     runProgram(argv[1], argv + 1);
     end_real = times(&end);
 
-    // diferentele de timp
-    printf("Real time: %jd\n", (intmax_t)(end_real - start_real));
-    printf("User time: %jd\n", (intmax_t)(end.tms_utime - start.tms_utime));
-    printf("System time: %jd\n", (intmax_t)(end.tms_stime - start.tms_stime));
+    printf("Timp real: %.2f sec\n", (double)(end_real - start_real)/clk_tck);
+    printf("Timp user (parinte): %.2f sec\n", (double)(end.tms_utime - start.tms_utime)/clk_tck);
+    printf("Timp system (parinte): %.2f sec\n", (double)(end.tms_stime - start.tms_stime)/clk_tck);
+    printf("Timp user (copil): %.2f sec\n", (double)(end.tms_cutime - start.tms_cutime)/clk_tck);
+    printf("Timp system (copil): %.2f sec\n", (double)(end.tms_cstime - start.tms_cstime)/clk_tck);
 
-
-    exit(0);
+    return 0;
 }
+
+// exemplu de rulare: ./times ls

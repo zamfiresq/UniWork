@@ -10,33 +10,33 @@ void handler(int); // initializare handler
 
 void (*old_handler)(int); // pointer catre handlerul vechi
 
-unsigned int mysleep(unsigned int seconds) { // functionalitate mysleep pentru a prinde semnalul SIGINT in main
-    if ((old_handler = signal(SIGALRM, handler)) == SIG_ERR) { // daca nu putem seta handlerul pentru SIGALRM
+unsigned int mysleep(unsigned int seconds) {                    // functionalitate mysleep pentru a prinde semnalul SIGINT in main
+    if ((old_handler = signal(SIGALRM, handler)) == SIG_ERR) {  // daca nu putem seta handlerul pentru SIGALRM
         perror("EROARE SEMNAL SIGALRM");
         exit(1);
     }
     signal(SIGALRM, handler);
     signal(SIGINT, handler);
-    alarm(seconds); // setam un timer pentru SIGALRM
-    seconds_left = seconds; // initializam variabila seconds_left cu numarul de secunde
-    pause(); // asteptam semnalul SIGALRM
-    return alarm(0); // returnam numarul de secunde ramase din timer
+    alarm(seconds);                                             // setam un timer pentru SIGALRM
+    seconds_left = seconds;                                     // initializam variabila seconds_left cu numarul de secunde
+    pause();                                                    // asteptam semnalul SIGALRM
+    return alarm(0);                                            // returnam numarul de secunde ramase din timer
 }
 
 
 int main(int argc, char *argv[], char* envp[])
 {
-    if((old_handler = signal(SIGINT, handler)) == SIG_ERR){ // daca nu putem seta handlerul pentru SIGINT, afisam eroare
+    if((old_handler = signal(SIGINT, handler)) == SIG_ERR){     // daca nu putem seta handlerul pentru SIGINT, afisam eroare
         perror("EROARE SEMNAL SIGINT");
     exit(1);
     }
 
-    printf("\nnumber of seconds left = %d\n", mysleep(20)); // apeland mysleep(20) in main, vom astepta 20 de secunde pana la afisarea mesajului
+    printf("\nnumber of seconds left = %d\n", mysleep(20));     // apeland mysleep(20) in main, vom astepta 20 de secunde pana la afisarea mesajului
 
     return 0;
 }
 
-void handler(int signum){ // cream acest handler pentru a trata semnalul SIGINT
+void handler(int signum){                                       // cream acest handler pentru a trata semnalul SIGINT
     return;
 }
 
