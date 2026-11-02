@@ -1,0 +1,68 @@
+--Zamfirescu Alexandra - Proiect BD, Anul 1 , grupa 141
+
+--12
+
+--Subcerere sincronizata in care intervin cel putin 3 tabele:
+
+SELECT P.NUME, D.DENUMIRE, R.STATUS
+FROM PACIENT P
+JOIN TRATAMENT T ON P.ID_PACIENT = T.ID_PACIENT
+JOIN REZULTATE_ANALIZE R ON T.ID_TRATAMENT = R.ID_TRATAMENT
+JOIN PERS_MIL PM ON R.ID_PERS_MIL = PM.ID_PERS_MIL
+JOIN DEPARTAMENT D ON PM.ID_DEPARTAMENT = D.ID_DEPARTAMENT;
+
+
+
+--Subcerere nesincronizata in clauza FROM si utilizarea functiilor grup cu filtrare la nivel de grup
+
+SELECT P.DENUMIRE, AVG(PM.SALARIU) AS SALARIU_MEDIU
+FROM DEPARTAMENT P
+JOIN PERS_MIL PM ON P.ID_DEPARTAMENT = PM.ID_DEPARTAMENT
+WHERE PM.GRAD_MILITAR = 'Locotenent'
+GROUP BY P.DENUMIRE
+HAVING AVG(PM.SALARIU) > 6000;
+
+
+
+--Ordonarea si utilizarea functiilor NVL si DECODE
+
+SELECT NUME, PRENUME, NVL(ADRESA, 'Necunoscută') AS ADRESA, DECODE(SEX, 'M', 'Masculin', 'F', 'Feminin', 'Necunoscut') AS SEX
+FROM PACIENT
+ORDER BY NUME ASC;
+
+
+
+--Clauza WITH
+WITH ANALIZE_PACIENT AS (
+    SELECT A.ID_ANALIZE, P.NUME, P.PRENUME, A.DENUMIRE
+    FROM ANALIZE A
+    JOIN PACIENT P ON A.ID_PACIENT = P.ID_PACIENT
+)
+SELECT AP.ID_ANALIZE, AP.NUME, AP.PRENUME, AP.DENUMIRE
+FROM ANALIZE_PACIENT AP
+WHERE AP.DENUMIRE LIKE 'Hemoleucograma';
+
+
+
+--13
+--Implementarea a 3 operatii de actualizare si de suprimare a datelor utilizand subcereri:
+--Actualizarea unei inregistrari folosind o subcerere
+
+UPDATE ANALIZE
+SET COST = COST * 1.1
+WHERE ID_ANALIZE = (SELECT ID_ANALIZE FROM ANALIZE WHERE DENUMIRE = 'Hemoleucograma' AND ROWNUM = 1);
+
+
+--Actualizarea mai multori inregistrari folosind o subcerere
+
+UPDATE ANALIZE
+SET COST = COST * 1.2
+WHERE ID_ANALIZE IN (SELECT ID_ANALIZE FROM ANALIZE WHERE DATA_ANALIZA < SYSDATE);
+
+
+--Stergerea unei inregistrari folosind o subcerere
+
+DELETE FROM ANALIZE
+WHERE ID_ANALIZE = (SELECT ID_ANALIZE FROM ANALIZE WHERE DENUMIRE = 'Test COVID' AND ROWNUM = 1);
+
+
