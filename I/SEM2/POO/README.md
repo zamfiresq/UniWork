@@ -1,4 +1,4 @@
-# OOP
+# Programare Orientata pe Obiecte(OOP)
 
 ### Notare
 **Nota finala** = **25% pe 3 proiecte** + **25% colocviu** + **50% test scris** (minim 5 la toate 3), maxim 2 pct bonus la nota pe proiecte de catre tutorele de lab
