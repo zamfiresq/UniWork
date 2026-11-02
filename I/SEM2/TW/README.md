@@ -1,13 +1,18 @@
-# Poftă Bună, Mulțumesc
+# Tehnici Web
 
-## Project Overview
+### Notare
+**nota curs = nexa + nlab + 10 (oficiu)**, unde
 
-This project is a simple web application that allows users to search for recipes based on the ingredients they have at home. The application uses the [Edamam API](https://developer.edamam.com/edamam-recipe-api) to search for recipes based on the ingredients provided by the user.
+**nexa** = notă examen scris [<= 60 puncte]  
+**nlab** = notă laborator [<= 30 puncte]  
+**nlab** = nlab1 + nlab2  
+**nlab1** = notă activitate laborator* [<= 10 puncte]  
+**nlab2** = notă proiect [<= 20 de puncte]  
 
-## Features
-### Home page
-![alt text](ss/image.png)
+**condiția de promovare: nexa >= 30 & nlab >= 15**
 
-### Recipes
-![alt text](ss/image-1.png)
-![alt text](ss/image-2.png)
+
+*nlab poate fi 30 și când nlab1<10
+
+### Materiale
+Toate materialele cursului si laboratorului se gasesc [aici](https://cs.unibuc.ro/~cechirita/tw/)
