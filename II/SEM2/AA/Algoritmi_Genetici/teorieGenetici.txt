@@ -1,0 +1,19 @@
+DEFINITII UTILE
+
+cromozom = multime ordonata de elemente (gene) ale caror valoare determina caracteristcile unui individ 
+
+populatie = multime de indivizi care traiesc intr-un mediu la care trebuie sa se adapteze 
+
+fitness (adecvare) = masura a gradului de adaptare la mediu pentru fiecare individ (functie de fitness)
+
+generatie = etapa in evolutia populatiei 
+
+selectie = proces prin care sunt promovati indivizii cu grad ridicat de adaptare la mediu
+
+
+OPERATORI GENETICI
+
+- incrucisare (crossover) = indivizii din noua generatie mostenesc caracteristicile parintilor
+
+- mutatie = indivizii din noua generatie pot dobandi si caracteristici noi
+
