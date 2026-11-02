@@ -1,0 +1,17 @@
+# ninja log v5
+4	615	1708435946024923176	CMakeFiles/exColocviiAF.dir/colocviuAF/ex1.cpp.o	83402dc5706ae893
+615	795	1708435946207749001	exColocviiAF	e17ff357d9b9a4ab
+3	25	1708384826727310053	CMakeFiles/exColocviiAF.dir/colocviuAF/ex2.cpp.o	b5fed5b0f97e8195
+5	220	1708435945628710395	CMakeFiles/exColocviiAF.dir/colocviuAF/ex3.cpp.o	da49b048177e9e55
+4	79	1708444768616779720	CMakeFiles/exColocviiAF.dir/algoritmiAF/algoritmiUseful.cpp.o	69c729b1ee74d365
+3	80	1708444768616779804	CMakeFiles/exColocviiAF.dir/colocviuAF/ex1.cpp.o	83402dc5706ae893
+4	467	1708444769003690352	CMakeFiles/exColocviiAF.dir/colocviu0/ex1c0.cpp.o	e570f441c017db5a
+4	496	1708444769031991529	CMakeFiles/exColocviiAF.dir/colocviuAF/ex2.cpp.o	b5fed5b0f97e8195
+4	26	1708444781712327496	CMakeFiles/exColocviiAF.dir/colocviuAF/ex2.cpp.o	b5fed5b0f97e8195
+26	61	1708444781747461977	exColocviiAF	555c5b18515f8210
+4	452	1708444850780021921	CMakeFiles/exColocviiAF.dir/colocviu0/ex1c0.cpp.o	e570f441c017db5a
+452	483	1708444850814136234	exColocviiAF	555c5b18515f8210
+4	341	1708445449453992008	CMakeFiles/exColocviiAF.dir/colocviu0/ex1c0.cpp.o	e570f441c017db5a
+343	379	1708445449494679604	exColocviiAF	555c5b18515f8210
+4	333	1708445520636070131	CMakeFiles/exColocviiAF.dir/colocviu0/ex1c0.cpp.o	e570f441c017db5a
+333	370	1708445520676024564	exColocviiAF	555c5b18515f8210

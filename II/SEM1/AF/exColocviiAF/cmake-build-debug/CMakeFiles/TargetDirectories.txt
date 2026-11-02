@@ -1,0 +1,3 @@
+/Users/alexandrazamfirescu/Desktop/exColocviiAF/cmake-build-debug/CMakeFiles/exColocviiAF.dir
+/Users/alexandrazamfirescu/Desktop/exColocviiAF/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alexandrazamfirescu/Desktop/exColocviiAF/cmake-build-debug/CMakeFiles/rebuild_cache.dir
