@@ -1,0 +1,3 @@
+# Proiect Probabilitati si Statistica
+
+Proiectul implementeaza concepte cheie de probabilitate si statistica in R, cum ar fi generarea si completarea distributiilor comune, calcularea distributiilor marginale, covariatelor, probabilitatilor conditionale si testarea independentei. De asemenea, vizualizeaza distributiile comune 3D si verifica functiile de densitate si Teorema lui Fubini folosind integrarea numerica.
